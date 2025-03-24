@@ -47,6 +47,26 @@
             const task = event.target.parentElement.parentElement;
             taskList.removeChild(task);
         }
+
+        function originalFunction() {
+    console.log("This is the modified function."); // Modified line
+}
+
+        function filterTasks() {
+  const filter = searchInput.value.toLowerCase();
+  const listItems = taskList.getElementsByTagName('li');
+
+  for (let i = 0; i < listItems.length; i++) {
+    const span = listItems[i].getElementsByTagName('span')[0];
+    const text = span.textContent.toLowerCase();
+    if (text.indexOf(filter) > -1) {
+      listItems[i].style.display = ''; // Show the item
+    } else {
+      listItems[i].style.display = 'none'; // Hide the item
+    }
+  }
+}
     </script>
 </body>
 </html>
+
