@@ -44,6 +44,10 @@
             taskList.removeChild(task);
         }
 
+        function originalFunction() {
+    console.log("This is the modified function."); // Modified line
+}
+
         function filterTasks() {
   const filter = searchInput.value.toLowerCase();
   const listItems = taskList.getElementsByTagName('li');
