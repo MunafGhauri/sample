@@ -6,14 +6,26 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
+    transition: background-color 0.3s ease; /* Added transition for smooth color changes */
 }
 
-..container {
+body.dark-mode {
+    background-color: #333; /* Dark mode background */
+    color: #eee; /* Dark mode text color */
+}
+
+.container {
     width: 400px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transitions */
+}
+
+.dark-mode .container {
+    background-color: #444; /* Dark mode container background */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Adjusted shadow for dark mode */
 }
 
 .input-container {
@@ -26,6 +38,15 @@ input[type="text"] {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Added transitions */
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-mode input[type="text"] {
+    border-color: #666;
+    background-color: #555;
+    color: #eee;
 }
 
 button {
@@ -33,28 +54,4 @@ button {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-li:last-child {
-    border-bottom: none;
-}
+    border-radius: 4px
