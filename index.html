@@ -34,6 +34,10 @@
     }
 }
 
+    function originalFunction() {
+        console.log("This is the original function.");  
+    }
+
         function completeTask(event) {
             const task = event.target.parentElement.parentElement;
             task.querySelector('span').classList.toggle('completed');
