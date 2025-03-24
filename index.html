@@ -33,6 +33,11 @@
         deleteButton.addEventListener('click', deleteTask);
     }
 }
+
+function completeTask(event) {
+            const task = event.target.parentElement.parentElement;
+            task.querySelector('span').classList.toggle('completed');
+        }
     </script>
 </body>
 </html>
