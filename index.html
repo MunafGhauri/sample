@@ -14,6 +14,25 @@
 
     <script>
         // Javascript will be added later
+        function addTask(taskText, taskList) {
+    if (taskText) {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${taskText}</span>
+            <div>
+                <button class="complete-btn">Complete</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        `;
+        taskList.appendChild(li);
+
+        const completeButton = li.querySelector('.complete-btn');
+        const deleteButton = li.querySelector('.delete-btn');
+
+        completeButton.addEventListener('click', completeTask);
+        deleteButton.addEventListener('click', deleteTask);
+    }
+}
     </script>
 </body>
 </html>
